@@ -42,6 +42,7 @@
 
 1. 运行环境：你的目标设备必须已安装 Docker 和 Docker Compose，并且已经解决了镜像拉取相关的问题
 
+
 2. 使用本工具的前提：建立一套有条理的 Docker 项目管理方法， 依赖特定的文件目录结构：
 
 （1）在 NAS 或目标设备中创建一个专门管理 Docker 项目的主文件夹（以下简称“Docker 文件夹”），如：/volume1/your_path/Docker
@@ -49,6 +50,7 @@
 （2）在 Docker 文件夹内为每个需要部署的 Docker 项目创建一个独立的文件夹（以下简称“项目文件夹”），如：/volume1/your_path/Docker/Jellyfin，/volume1/your_path/Docker/RustDesk，等等
 
 （3）将 docker-tool.sh、project-menu.sh 放入 Docker 文件夹
+
 
 3. 根据你的目标设备情况定义 docker-tool.sh 中的环境变量，含义说明：
 
@@ -70,6 +72,7 @@ PROJECT_MENU_SCRIPT：此变量的值应为 Docker 文件夹下的 project-menu.
 
 CUSTOM_MENU_ITEM_SCRIPT：此变量的值应为项目文件夹下的 custom-menu-item.sh 文件名，用于某些 Docker 项目对二级菜单进行增减，可自定义
 
+
 4. 在 docker-tool.sh 中定义全局变量，含义说明：
 
 docker_project_name_1：变量值应与每个项目文件夹同名，变量名称后缀按照自然数从小到大排列，如：docker_project_name_1="Jellyfin"，docker_project_name_2="RustDesk"，以此类推，直接参与生成一级菜单
@@ -81,6 +84,7 @@ special_project_command_1() { ; }：这个不是变量，而是每个特殊项�
 project_column_count：一级菜单的列数，值为1或2，可根据 Docker 项目的数量设置
 
 database_keywords：数据库镜像的关键词，用于判断 docker-compose 配置文件中是否有数据库容器
+
 
 5. 在项目文件夹中放入 DOCKER_RUN_FILE 或 DOCKER_COMPOSE_FILE，具体举例：
 
