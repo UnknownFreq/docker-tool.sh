@@ -12,11 +12,14 @@
 
 # 测试环境
 |已测试|
-| :---------------------------: |
+| :----------------: |
 |Synology DSM 7.2|
+
 |未测试|
+| :---------------------------: |
 |iStoreOS|
 |Proxmox Virtual Environment|
+
 
 # 主要功能及特性
 * 针对 NAS 等场景进行 Docker 容器的全生命周期操作管理
@@ -39,30 +42,48 @@
 
 1. 运行环境：你的目标设备必须已安装 Docker 和 Docker Compose，并且已经解决了镜像拉取相关的问题
 
-2. 使用本工具的前提：建立一套有条理的 Docker 项目管理方法， 依赖特定的文件目录结构：--
+2. 使用本工具的前提：建立一套有条理的 Docker 项目管理方法， 依赖特定的文件目录结构：
+
 （1）在 NAS 或目标设备中创建一个专门管理 Docker 项目的主文件夹（以下简称“Docker 文件夹”），如：/volume1/your_path/Docker
+
 （2）在 Docker 文件夹内为每个需要部署的 Docker 项目创建一个独立的文件夹（以下简称“项目文件夹”），如：/volume1/your_path/Docker/Jellyfin，/volume1/your_path/Docker/RustDesk，等等
+
 （3）将 docker-tool.sh、project-menu.sh 放入 Docker 文件夹
 
-3. 根据你的目标设备情况定义 docker-tool.sh 中的环境变量，含义说明：
+4. 根据你的目标设备情况定义 docker-tool.sh 中的环境变量，含义说明：
+
 PARENT_SCRIPT：docker-tool.sh 脚本自身的完整路径，此环境变量的值无需修改，脚本会自动处理
+
 DOCKER_PATH：Docker 文件夹的路径，此环境变量的值无需修改，脚本会自动处理
+
 DOCKER_RUN_FILE：用于存储 docker run 命令的脚本文件名，适用于单容器项目，需固定命名为与项目文件夹同名的 .sh 文件（此环境变量的值无需修改），如 Jellyfin.sh，并将其放入项目文件夹内
+
 DOCKER_COMPOSE_FILE：用于存储 docker-compose 信息的配置文件名，适用于多容器项目，需固定命名为与项目文件夹同名的 .yaml 文件或 .yml 文件（此环境变量的值无需修改），如 RustDesk.yaml，并将其放入项目文件夹内
+
 DOCKER_IMAGE_SAVE_PATH：用于导出镜像的保存路径，可自定义
+
 VOLUME_PATH：存储卷文件夹所在目录路径，用于保存容器挂载的外置文件夹，如 /volume1/docker，可自定义
+
 VOLUME_BACKUP_PATH：用于备份容器挂载的外置文件夹，作为目标路径，可自定义
+
 PROJECT_MENU_SCRIPT：此变量的值应为 Docker 文件夹下的 project-menu.sh 文件名，可自定义
+
 CUSTOM_MENU_ITEM_SCRIPT：此变量的值应为项目文件夹下的 custom-menu-item.sh 文件名，用于某些 Docker 项目对二级菜单进行增减，可自定义
 
-5. 在 docker-tool.sh 中定义全局变量，含义说明：
+6. 在 docker-tool.sh 中定义全局变量，含义说明：
+
 docker_project_name_1：变量值应与每个项目文件夹同名，变量名称后缀按照自然数从小到大排列，如：docker_project_name_1="Jellyfin"，docker_project_name_2="RustDesk"，以此类推，直接参与生成一级菜单
+
 special_project_name_1：变量值为特殊项目名称，此类项目为特殊部署方式，如雷池、小雅超集，变量名称后缀按照自然数从小到大排列
+
 special_project_command_1() { ; }：这个不是变量，而是每个特殊项目所对应的执行命令，应在{ ;两个字符之间插入具体的命令，如打开雷池官方的部署脚本，或打开小雅超集的部署脚本，变量名称后缀按照自然数从小到大排列
+
 project_column_count：一级菜单的列数，值为1或2，可根据 Docker 项目的数量设置
+
 database_keywords：数据库镜像的关键词，用于判断 docker-compose 配置文件中是否有数据库容器
 
-6. 在项目文件夹中放入 DOCKER_RUN_FILE 或 DOCKER_COMPOSE_FILE，具体举例：
+8. 在项目文件夹中放入 DOCKER_RUN_FILE 或 DOCKER_COMPOSE_FILE，具体举例：
+
 （1）DOCKER_RUN_FILE：如 /volume1/your_path/Docker/Jellyfin/Jellyfin.sh
 ```
 #!/bin/bash
