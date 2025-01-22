@@ -222,7 +222,6 @@ var_custom_menu_item
 unset -v project_menu_text_1 project_menu_command_1
 unset -v project_menu_text_2 project_menu_command_2
 unset -v project_menu_text_6 project_menu_command_6
-
 ```
 
 7.将以上文件准备完毕后，即可登录到目标设备的 SSH，然后执行以下命令，在输入完 root 密码后即可打开一级菜单：
