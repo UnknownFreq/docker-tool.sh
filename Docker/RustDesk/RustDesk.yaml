@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+
+  rustdesk:
+    container_name: RustDesk
+    image: rustdesk/rustdesk-server-s6:latest
+    restart: always
+    network_mode: host
+    volumes:
+      - ${VOLUME_PATH}/rustdesk/db:/db
+      - /etc/localtime:/etc/localtime:ro
+    environment:
+      - ENABLE_WEB_CLIENT=true
+      - RELAY="your.domain:port"
+      - ENCRYPTED_ONLY=1
+      - DB_URL=/db/db_v2.sqlite3
+      - KEY_PRIV="your_value"
+      - KEY_PUB="your_value"
+
+  rustdesk_api_server:
+    container_name: RustDesk_API_Server
+    image: kingmo888/rustdesk-api-server:master
+    restart: always
+    ports:
+      - 21114:21114/tcp
+      - 21114:21114/udp
+    volumes:
+      - ${VOLUME_PATH}/rustdesk_api_server/db:/rustdesk-api-server/db
+      - /etc/localtime:/etc/localtime:ro
+#      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - CSRF_TRUSTED_ORIGINS="https://your.domain:port"   # 防跨域信任来源，可选
+      - ID_SERVER="your.domain:port"  # Web控制端使用的ID服务器
+      - ALLOW_REGISTRATION=False
