@@ -2,6 +2,9 @@
 这是一个用于提高 Docker 容器操作效率的自动化 Shell 脚本，在 SSH 会话中使用，内置了常用的 Docker 功能。
 
 # 截图
+跨平台效果：
+![image](https://github.com/user-attachments/assets/ce63b843-db3b-4ae4-a5fb-4d962946bce6)
+
 一级菜单：
 
 ![image](https://github.com/user-attachments/assets/62d4b5ef-7871-4952-96c5-fe3f2800a159)
