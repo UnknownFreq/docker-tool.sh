@@ -118,7 +118,7 @@ docker run --name $DOCKER_PROJECT_NAME \
 }
 ```
 
-（2）DOCKER_COMPOSE_FILE：就是 docker-compose 配置文件，如 /volume1/your_path/Docker/RustDeskRustDesk.yaml
+（2）DOCKER_COMPOSE_FILE：就是 docker-compose 配置文件，如 /volume1/your_path/Docker/RustDesk/RustDesk.yaml
 ```
 version: '3.8'
 
