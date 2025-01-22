@@ -51,7 +51,7 @@ function command_4_1() {
 
 function command_4_2() {
   set -x
-  docker exec -it Dendrite bash -c './bin/create-account --config dendrite.yaml --jxst991059'
+  docker exec -it Dendrite bash -c './bin/create-account --config dendrite.yaml --username'
   { set +x; } >/dev/null 2>&1
 }
 
