@@ -1,5 +1,5 @@
 # docker-tool.sh
-这是一个用于提高 Docker 容器操作效率的自动化 Shell 脚本，在 SSH 会话中使用，内置了常用的 Docker 功能。
+这是一个用于提高 Docker 容器操作效率的自动化 Shell 脚本，主要用于 NAS、软路由、服务器等设备，在 SSH 会话中使用，内置了常用的 Docker 功能。
 
 # 截图
 跨平台效果：
