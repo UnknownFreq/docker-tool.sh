@@ -4,7 +4,7 @@
 # 截图
 跨平台效果（截图中的终端软件由 JumpServer 提供技术支持）：
 
-![image](https://github.com/user-attachments/assets/ce63b843-db3b-4ae4-a5fb-4d962946bce6)
+![image](https://github.com/user-attachments/assets/112a3b41-24f9-4d6d-ac44-374ab41aaaaa)
 
 一级菜单：
 
