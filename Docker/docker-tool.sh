@@ -6,7 +6,7 @@
 # https://github.com/UnknownFreq/docker-tool.sh
 # Last updated: 2025-01-22
 
-# This work is free software and licensed under GNU AGPL 3.0.
+# This work is libre software and licensed under GNU AGPL 3.0.
 # https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file
 
 # 输出环境变量
