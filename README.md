@@ -245,10 +245,10 @@ source "/volume1/your_path/Docker/docker-tool.sh" && deployment_program
 （5）隐藏功能：输入“.”可查看当前环境中的变量，用于调试
 
 # 版权声明
-Copyleft © 2024-2025
+Copyleft © 2024-2025 UnknownFreq
 
-https://github.com/UnkownFate/docker-tool.sh
+https://github.com/UnknownFreq/docker-tool.sh
 
 This work is licensed under GNU AGPL 3.0.
 
-https://github.com/UnkownFate/docker-tool.sh?tab\=AGPL-3.0-1-ov-file
+https://github.com/UnknownFreq/docker-tool.sh?tab\=AGPL-3.0-1-ov-file
