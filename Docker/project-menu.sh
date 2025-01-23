@@ -2,12 +2,12 @@
 
 # project-menu of docker-tool.sh V1.0.0
 
-# Copyleft © 2024-2025
-# https://github.com/UnkownFate/docker-tool.sh
+# Copyleft © 2024-2025 UnknownFreq
+# https://github.com/UnknownFreq/docker-tool.sh
 # Last updated: 2025-01-22
 
-# This work is licensed under GNU AGPL 3.0.
-# https://github.com/UnkownFate/docker-tool.sh?tab=AGPL-3.0-1-ov-file
+# This work is libre software and licensed under GNU AGPL 3.0.
+# https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file
 
 # 引用父脚本
 source "$PARENT_SCRIPT"
