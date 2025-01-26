@@ -484,9 +484,13 @@ function docker_save() {
 #  rm -rf "$DOCKER_IMAGE_SAVE_PATH/*"
 #  { set +x; } >/dev/null 2>&1
   echo ""
+  echo "导出中..."
+  echo ""
   set -x
   docker save -o "$DOCKER_IMAGE_SAVE_PATH/$docker_image_file_name" $docker_image_name
   { set +x; } >/dev/null 2>&1
+  echo ""
+  echo "导出成功！"
 }
 
 function docker_volume_folder_backup() {
@@ -853,6 +857,8 @@ function docker_compose_save() {
 #  set -x
 #  rm -rf "$DOCKER_IMAGE_SAVE_PATH/*"
 #  { set +x; } >/dev/null 2>&1
+  echo ""
+  echo "导出中..."
   # 循环查找所有符合前缀的变量并执行 docker save 操作
   for var in $(compgen -v | grep '^docker_image_name_' | sort -V); do
     # 获取变量名去掉前缀后的序号部分
@@ -870,6 +876,8 @@ function docker_compose_save() {
   done
   # 清理局部变量
   unset -v var
+  echo ""
+  echo "导出成功！"
 }
 
 function docker_compose_volume_folder_backup() {
