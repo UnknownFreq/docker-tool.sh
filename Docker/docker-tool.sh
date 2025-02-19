@@ -1,14 +1,16 @@
 #!/bin/bash
 
-echo ""
-echo "docker-tool.sh V1.0.2"
-echo ""
-echo "Copyleft © 2024-2025 UnknownFreq"
-echo "https://github.com/UnknownFreq/docker-tool.sh"
-echo "Last updated: 2025-02-19"
-echo ""
-echo "This work is libre software and licensed under GNU AGPL 3.0."
-echo "https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file"
+# 函数：版权信息
+function copyleft_info() {
+  echo "docker-tool.sh V1.0.2"
+  echo ""
+  echo "Copyleft © 2024-2025 UnknownFreq"
+  echo "https://github.com/UnknownFreq/docker-tool.sh"
+  echo "Last updated: 2025-02-19"
+  echo ""
+  echo "This work is libre software and licensed under GNU AGPL 3.0."
+  echo "https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file"
+}
 
 # 输出环境变量
 export PARENT_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")" # 获取自身路径
@@ -260,7 +262,9 @@ function deployment_program() {
     # 显示菜单
     while true; do
       echo ""
-      echo "Docker 部署程序："
+      copyleft_info
+      echo ""
+      echo "DiskStation Docker 部署程序："
       echo "$project_menu_separator"
       # 显示所有项目（单列）
       if [[ $project_column_count == "1" ]]; then
