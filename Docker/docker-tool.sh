@@ -262,6 +262,7 @@ function deployment_program() {
     # 显示菜单
     while true; do
       echo ""
+      echo "$project_menu_separator"
       copyleft_info
       echo ""
       echo "DiskStation Docker 部署程序："
