@@ -1,13 +1,14 @@
 #!/bin/bash
 
-# docker-tool.sh V1.0.0
-
-# Copyleft © 2024-2025 UnknownFreq
-# https://github.com/UnknownFreq/docker-tool.sh
-# Last updated: 2025-01-22
-
-# This work is libre software and licensed under GNU AGPL 3.0.
-# https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file
+echo ""
+echo "docker-tool.sh V1.0.2"
+echo ""
+echo "Copyleft © 2024-2025 UnknownFreq"
+echo "https://github.com/UnknownFreq/docker-tool.sh"
+echo "Last updated: 2025-02-19"
+echo ""
+echo "This work is libre software and licensed under GNU AGPL 3.0."
+echo "https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file"
 
 # 输出环境变量
 export PARENT_SCRIPT="$(readlink -f "${BASH_SOURCE[0]}")" # 获取自身路径
@@ -259,15 +260,6 @@ function deployment_program() {
     # 显示菜单
     while true; do
       echo ""
-      echo "docker-tool.sh V1.0.0"
-      echo ""
-      echo "Copyleft © 2024-2025 UnknownFreq"
-      echo "https://github.com/UnknownFreq/docker-tool.sh"
-      echo "Last updated: 2025-01-22"
-      echo ""
-      echo "This work is libre software and licensed under GNU AGPL 3.0."
-      echo "https://github.com/UnknownFreq/docker-tool.sh?tab=AGPL-3.0-1-ov-file"
-      echo ""
       echo "Docker 部署程序："
       echo "$project_menu_separator"
       # 显示所有项目（单列）
@@ -478,7 +470,8 @@ function docker_reset() {
 }
 
 function docker_save() {
-  # 删除旧镜像
+  mkdir -p "$DOCKER_IMAGE_SAVE_PATH"
+  # 删除旧镜像（慎用）
 #  echo ""
 #  set -x
 #  rm -rf "$DOCKER_IMAGE_SAVE_PATH/*"
@@ -852,6 +845,7 @@ function docker_compose_reset() {
 }
 
 function docker_compose_save() {
+  mkdir -p "$DOCKER_IMAGE_SAVE_PATH"
   # 删除旧镜像（慎用）
 #  echo ""
 #  set -x
